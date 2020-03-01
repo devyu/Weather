@@ -1,3 +1,12 @@
+*.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
 # Built application files
 *.apk
 *.aar
@@ -83,3 +92,4 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
