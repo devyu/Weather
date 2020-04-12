@@ -5,7 +5,7 @@
 
     <list>
         <mapping class="app.yu.weather.db.Province"/>
-        <mapping class="app.yu.weather.db.County"/>
         <mapping class="app.yu.weather.db.City"/>
+        <mapping class="app.yu.weather.db.County"/>
     </list>
 </litepal>
