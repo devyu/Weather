@@ -3,6 +3,7 @@ package app.yu.weather;
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,6 +29,7 @@ import java.util.List;
 import app.yu.weather.db.City;
 import app.yu.weather.db.County;
 import app.yu.weather.db.Province;
+import app.yu.weather.gson.Weather;
 import app.yu.weather.util.HttpUtil;
 import app.yu.weather.util.Utility;
 import okhttp3.Call;
@@ -92,6 +94,12 @@ public class ChooseAreaFragment extends Fragment {
         } else if (currentLevel == LEVEL_CITY) {
           selectedCity = cityList.get(position);
           queryCounties();
+        } else if (currentLevel == LEVEL_COUNTY) {
+          String weatherId = countyList.get(position).getWeatherId();
+          Intent intent = new Intent(getActivity(), WeatherActivity.class);
+          intent.putExtra("weather_id", weatherId);
+          startActivity(intent);
+          getActivity().finish();
         }
       }
     });
